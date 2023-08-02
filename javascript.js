@@ -36,10 +36,10 @@ const startButton = document.querySelector('.startButton'); // Button to start t
 
 const preGame = document.querySelector('.preGame'); // div that only shows the start button
 
-const playAgainButton = document.querySelector('.playAgain'); // button to restart the game, reseting the page to the beginning
+const playAgainButton = document.querySelector('.playAgain'); // button to restart the game, resetting the page to the beginning
 
 const btn = document.querySelectorAll('button'); //getting the buttons from HTML file to the DOM;
-console.log(btn)
+
 
 startButton.addEventListener('click', () => {
     startGame();
@@ -82,48 +82,48 @@ function playRound(playerSelection, computerChoice){
 
     if (playerSelection === computerChoice){
         results.textContent = "Results: " + tie;
-        compSelection.textContent = computerChoice;
+        compSelection.textContent = "Computer chooses: " + computerChoice;
         playerScore.textContent = "Human: " + playerWins;
         computerScore.textContent = "Machine: " + computerWins;
     }
     else if (playerSelection === "Paper" && computerChoice === "Rock"){
         results.textContent = "Results: " + playerWon;
-        compSelection.textContent = computerChoice;
+        compSelection.textContent = "Computer chooses: " + computerChoice;
         playerWins++;
         playerScore.textContent = "Human: " + playerWins;
         computerScore.textContent = "Machine: " + computerWins;
     }
     else if (playerSelection === "Scissors" && computerChoice === "Rock"){
         results.textContent = "Results: " + playerLose;
-        compSelection.textContent = computerChoice;
+        compSelection.textContent = "Computer chooses: " + computerChoice;
         computerWins++;
         computerScore.textContent = "Machine: " + computerWins;
         playerScore.textContent = "Human: " + playerWins;
     }
     else if (playerSelection === "Rock" && computerChoice === "Paper"){
         results.textContent = "Results: "+ playerLose;
-        compSelection.textContent = computerChoice;
+        compSelection.textContent = "Computer chooses: " + computerChoice;
         computerWins++
         computerScore.textContent = "Machine: " + computerWins;
         playerScore.textContent = "Human: " + playerWins;
     }
     else if (playerSelection === "Scissors" && computerChoice === "Paper"){
         results.textContent = "Results: " + playerWon;
-        compSelection.textContent = computerChoice;
+        compSelection.textContent = "Computer chooses: " + computerChoice;
         playerWins++
         playerScore.textContent = "Human: " + playerWins;
         computerScore.textContent = "Machine: " + computerWins;
     }
     else if (playerSelection === "Rock" && computerChoice === "Scissors"){
         results.textContent = "Results: " + playerWon;        
-        compSelection.textContent = computerChoice;
+        compSelection.textContent = "Computer chooses: " + computerChoice;
         playerWins++
         playerScore.textContent = "Human: " + playerWins;
         computerScore.textContent = "Machine: " + computerWins;
     }
     else if (playerSelection === "Paper" && computerChoice === "Scissors"){
         results.textContent = "Results: " + playerLose;
-        compSelection.textContent = computerChoice;
+        compSelection.textContent = "Computer chooses: " + computerChoice;
         computerWins++
         computerScore.textContent = "Machine: " + computerWins;
         playerScore.textContent = "Human: " + playerWins;

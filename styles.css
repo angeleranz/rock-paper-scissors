@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Raleway&display=swap');
+
+body{
+    font-family: 'Raleway', sans-serif;
+    font-size: small;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+    justify-content: space-between;
+    background-color: rgb(196, 169, 169);
+    text-decoration-color: white;
+}
+
+button{
+    border-radius: 5%;
+    padding: 3em 5em;
+    border: none;
+}
+
+button:hover{
+    background-color: gray;
+}
+
+#results{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 500px;
+    
+    
+   
+}
+.score{
+    display: flex;
+    flex-direction: column;
+    max-width: fit-content;        
+}
+
+
+
+.result{
+max-width: fit-content;
+}
+
+.enemyweapon.h1{
+    align-content: center;
+    align-items: center;
+    display: flex;
+}
+
