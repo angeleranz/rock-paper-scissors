@@ -11,6 +11,7 @@ let playerWins = 0;
 let computerWins = 0;
 let gameInProgress = false;
 
+
 const tie = "It's a tie!"
 
 const playerLose = "You lost! Better luck next time." // } defining possible outcomes from the game;
@@ -18,6 +19,14 @@ const playerLose = "You lost! Better luck next time." // } defining possible out
 const playerWon = "Congrats, you won!"
 
 const results = document.querySelector('.result');
+
+const score = document.querySelector('.score');
+
+const scoreboard = document.querySelector('.scoreboard')
+
+const playerScore = document.querySelector('.playerScore');
+
+const computerScore = document.querySelector('.computerScore');
 
 const compSelection = document.querySelector('.compSelection');
 
@@ -42,11 +51,12 @@ playAgainButton.addEventListener('click', () => {
 });
 
 game.style.display = 'none';
-
 playAgainButton.style.display = 'none';
+scoreboard.style.display = 'none';
 
 function startGame(){
     preGame.style.display = 'none';
+    scoreboard.style.display = 'block';
     game.style.display = 'block';
     gameInProgress = true;
 }
@@ -62,8 +72,7 @@ btn.forEach(button => {
         button.addEventListener('click', () => {
                 const playerSelection = button.innerText;
                 const computerChoice = getComputerChoice() 
-                return playRound(playerSelection, computerChoice);
-                
+                return playRound(playerSelection, computerChoice);                
     });
 });
 
@@ -72,47 +81,52 @@ function playRound(playerSelection, computerChoice){
 
 
     if (playerSelection === computerChoice){
-        results.textContent = tie;
+        results.textContent = "Results: " + tie;
         compSelection.textContent = computerChoice;
-        console.log(tie);
-        playerWins++;
-        computerWins++;
+        playerScore.textContent = "Human: " + playerWins;
+        computerScore.textContent = "Machine: " + computerWins;
     }
     else if (playerSelection === "Paper" && computerChoice === "Rock"){
-        results.textContent = playerWon;
+        results.textContent = "Results: " + playerWon;
         compSelection.textContent = computerChoice;
-        console.log(playerWon);
         playerWins++;
+        playerScore.textContent = "Human: " + playerWins;
+        computerScore.textContent = "Machine: " + computerWins;
     }
     else if (playerSelection === "Scissors" && computerChoice === "Rock"){
-        results.textContent = playerLose;
+        results.textContent = "Results: " + playerLose;
         compSelection.textContent = computerChoice;
-        console.log(playerLose);
         computerWins++;
+        computerScore.textContent = "Machine: " + computerWins;
+        playerScore.textContent = "Human: " + playerWins;
     }
     else if (playerSelection === "Rock" && computerChoice === "Paper"){
-        results.textContent = playerLose;
+        results.textContent = "Results: "+ playerLose;
         compSelection.textContent = computerChoice;
-        console.log(playerLose);
         computerWins++
+        computerScore.textContent = "Machine: " + computerWins;
+        playerScore.textContent = "Human: " + playerWins;
     }
     else if (playerSelection === "Scissors" && computerChoice === "Paper"){
-        results.textContent = playerWon;
+        results.textContent = "Results: " + playerWon;
         compSelection.textContent = computerChoice;
-        console.log(playerWon);
         playerWins++
+        playerScore.textContent = "Human: " + playerWins;
+        computerScore.textContent = "Machine: " + computerWins;
     }
     else if (playerSelection === "Rock" && computerChoice === "Scissors"){
-        results.textContent = playerWon;
+        results.textContent = "Results: " + playerWon;        
         compSelection.textContent = computerChoice;
-        console.log(playerWon);
         playerWins++
+        playerScore.textContent = "Human: " + playerWins;
+        computerScore.textContent = "Machine: " + computerWins;
     }
     else if (playerSelection === "Paper" && computerChoice === "Scissors"){
-        results.textContent = playerLose;
+        results.textContent = "Results: " + playerLose;
         compSelection.textContent = computerChoice;
-        console.log(playerLose);
         computerWins++
+        computerScore.textContent = "Machine: " + computerWins;
+        playerScore.textContent = "Human: " + playerWins;
     }
 
     checkBestOf5Winner();
@@ -121,15 +135,20 @@ function playRound(playerSelection, computerChoice){
 function checkBestOf5Winner(){
     if (playerWins === 3 || computerWins === 3){
         gameInProgress = false;
+        
 
-    if (playerWins ===3) {
+    if (playerWins === 3) {
         results.textContent = "Congratulations, you have beaten the machine. Our jobs are safe. For now."
-    }    else if (computerWins === 3){
+    }   else if (computerWins === 3){
         results.textContent = "Too bad you couldn't beat the machine. I hope they have mercy on you in the near future."
     }
+    
 
     playAgainButton.style.display = 'block'
     game.style.display = 'none';
+    scoreboard.style.display = 'none';
+    playerScore.style.display = 'none';
+    computerScore.style.display = 'none';
     }
 }
 
@@ -140,5 +159,10 @@ function resetGame() {
     compSelection.textContent = '';
     results.textContent = '';
     playAgainButton.style.display = 'none';
+    playerScore.textContent = '';
+    computerScore.textContent = '';
+    playerScore.style.display = 'block';
+    computerScore.style.display = 'block';
+    scoreboard.style.display = 'block';
     
 }
