@@ -18,6 +18,7 @@ button{
     border-radius: 5%;
     padding: 3em 5em;
     border: none;
+    margin: 0.5em;
 }
 
 button:hover{
@@ -26,19 +27,28 @@ button:hover{
 
 #results{
     display: flex;
-    justify-content: center;
+    align-items: center;
     flex-direction: column;
-    width: 500px;
-    
-    
+    width: 40em;
+}
+
+h1.compSelection{
+    display: flex;
+    justify-content: center;
    
 }
+
 .score{
     display: flex;
     flex-direction: column;
     max-width: fit-content;        
+    
 }
 
+.weapons{
+    display: flex;
+    
+}
 
     
 p{
