@@ -11,6 +11,7 @@ body{
     justify-content: space-between;
     background-color: rgb(196, 169, 169);
     text-decoration-color: white;
+    
 }
 
 button{
@@ -39,6 +40,11 @@ button:hover{
 }
 
 
+    
+p{
+    display: flex;
+    justify-content: center;
+}
 
 .result{
 max-width: fit-content;
@@ -49,4 +55,5 @@ max-width: fit-content;
     align-items: center;
     display: flex;
 }
+
 
